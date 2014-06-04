@@ -65,5 +65,10 @@ namespace WeatherNet.Model
         ///     Wind speed in mps.
         /// </summary>
         public Double WindSpeed { get; set; }
+        
+        /// <summary>
+        ///     Icon name.
+        /// </summary>
+        public String Icon { get; set; }
     }
 }
