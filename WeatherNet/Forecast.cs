@@ -12,7 +12,7 @@ namespace WeatherNet
     public class Forecast
     {
         /// <summary>
-        ///     Get the forecast for a specificcity by indicating its 'OpenwWeatherMap' identifier.
+        ///     Get the forecast for a specific city by indicating its 'OpenwWeatherMap' identifier.
         /// </summary>
         /// <param name="id">City 'OpenwWeatherMap' identifier.</param>
         /// <returns> The forecast information.</returns>
@@ -31,7 +31,7 @@ namespace WeatherNet
         }
 
         /// <summary>
-        ///     Get the forecast for a specificcity by indicating its 'OpenwWeatherMap' identifier, language and units (metric or imperial).
+        ///     Get the forecast for a specifi ccity by indicating its 'OpenwWeatherMap' identifier, language and units (metric or imperial).
         /// </summary>
         /// <param name="id">City 'OpenwWeatherMap' identifier.</param>
         /// <param name="language">The language of the information returned (example: English - en, Russian - ru, Italian - it, Spanish - sp, Ukrainian - ua, German - de, Portuguese - pt, Romanian - ro, Polish - pl, Finnish - fi, Dutch - nl, French - fr, Bulgarian - bg, Swedish - se, Chinese Traditional - zh_tw, Chinese Simplified - zh_cn, Turkish - tr , Czech - cz, Galician - gl, Vietnamese - vi, Arabic - ar, Macedonian - mk, Slovak - sk).</param>
@@ -98,7 +98,7 @@ namespace WeatherNet
         }
 
         /// <summary>
-        ///     Get the forecast for a specificcity by indicating its coordinates.
+        ///     Get the forecast for a specific city by indicating its coordinates.
         /// </summary>
         /// <param name="lat">Latitud of the city.</param>
         /// <param name="lon">Longitude of the city.</param>
@@ -117,7 +117,7 @@ namespace WeatherNet
         }
 
         /// <summary>
-        ///     Get the forecast for a specificcity by indicating its coordinates, language and units (metric or imperial).
+        ///     Get the forecast for a specific city by indicating its coordinates, language and units (metric or imperial).
         /// </summary>
         /// <param name="lat">Latitud of the city.</param>
         /// <param name="lon">Longitude of the city.</param>
