@@ -2,6 +2,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Text;
 using Newtonsoft.Json.Linq;
 using WeatherNet.Model;
 
@@ -21,13 +22,13 @@ namespace WeatherNet.Util.Data
 
             if (response["sys"] != null)
             {
-                weatherCurrent.Country = Convert.ToString(response["sys"]["country"]);
+                weatherCurrent.Country = Encoding.UTF8.GetString(Encoding.Default.GetBytes(Convert.ToString(response["sys"]["country"])));
             }
 
             if (response["weather"] != null)
             {
-                weatherCurrent.Title = Convert.ToString(response["weather"][0]["main"]);
-                weatherCurrent.Description = Convert.ToString(response["weather"][0]["description"]);
+                weatherCurrent.Title = Encoding.UTF8.GetString(Encoding.Default.GetBytes(Convert.ToString(response["weather"][0]["main"])));
+                weatherCurrent.Description = Encoding.UTF8.GetString(Encoding.Default.GetBytes(Convert.ToString(response["weather"][0]["description"])));
             }
 
             if (response["main"] != null)
@@ -44,7 +45,7 @@ namespace WeatherNet.Util.Data
             }
 
             weatherCurrent.Date = DateTime.UtcNow;
-            weatherCurrent.City = Convert.ToString(response["name"]);
+            weatherCurrent.City = Encoding.UTF8.GetString(Encoding.Default.GetBytes(Convert.ToString(response["name"])));
             weatherCurrent.CityId = Convert.ToInt32(response["id"]);
 
             return new SingleResult<WeatherCurrent>(weatherCurrent, true, TimeHelper.MessageSuccess);
@@ -65,15 +66,15 @@ namespace WeatherNet.Util.Data
                 var weatherForecast = new WeatherForecast();
                 if (response["city"] != null)
                 {
-                    weatherForecast.City = Convert.ToString(response["city"]["name"]);
-                    weatherForecast.Country = Convert.ToString(response["city"]["country"]);
+                    weatherForecast.City = Encoding.UTF8.GetString(Encoding.Default.GetBytes(Convert.ToString(response["city"]["name"])));
+                    weatherForecast.Country = Encoding.UTF8.GetString(Encoding.Default.GetBytes(Convert.ToString(response["city"]["country"])));
                     weatherForecast.CityId = Convert.ToInt32(response["city"]["id"]);
                 }
 
                 if (item["weather"] != null)
                 {
-                    weatherForecast.Title = Convert.ToString(item["weather"][0]["main"]);
-                    weatherForecast.Description = Convert.ToString(item["weather"][0]["description"]);
+                    weatherForecast.Title = Encoding.UTF8.GetString(Encoding.Default.GetBytes(Convert.ToString(item["weather"][0]["main"])));
+                    weatherForecast.Description = Encoding.UTF8.GetString(Encoding.Default.GetBytes(Convert.ToString(item["weather"][0]["description"])));
                 }
 
                 if (item["main"] != null)
@@ -116,14 +117,14 @@ namespace WeatherNet.Util.Data
                 var weatherDaily = new WeatherDaily();
                 if (response["city"] != null)
                 {
-                    weatherDaily.City = Convert.ToString(response["city"]["name"]);
-                    weatherDaily.Country = Convert.ToString(response["city"]["country"]);
+                    weatherDaily.City = Encoding.UTF8.GetString(Encoding.Default.GetBytes(Convert.ToString(response["city"]["name"])));
+                    weatherDaily.Country = Encoding.UTF8.GetString(Encoding.Default.GetBytes(Convert.ToString(response["city"]["country"])));
                     weatherDaily.CityId = Convert.ToInt32(response["city"]["id"]);
                 }
                 if (item["weather"] != null)
                 {
-                    weatherDaily.Title = Convert.ToString(item["weather"][0]["main"]);
-                    weatherDaily.Description = Convert.ToString(item["weather"][0]["description"]);
+                    weatherDaily.Title = Encoding.UTF8.GetString(Encoding.Default.GetBytes(Convert.ToString(item["weather"][0]["main"])));
+                    weatherDaily.Description = Encoding.UTF8.GetString(Encoding.Default.GetBytes(Convert.ToString(item["weather"][0]["description"])));
                 }
                 if (item["temp"] != null)
                 {
@@ -140,7 +141,7 @@ namespace WeatherNet.Util.Data
                 weatherDaily.WindSpeed = Convert.ToDouble(item["speed"]);
                 weatherDaily.Clouds = Convert.ToDouble(item["clouds"]);
                 weatherDaily.Pressure = Convert.ToDouble(item["pressure"]);
-                weatherDaily.Rain = Convert.ToDouble(item["pressure"]);
+                weatherDaily.Rain = Convert.ToDouble(item["rain"]);
                 weatherDaily.DateUnixFormat = Convert.ToInt32(item["dt"]);
                 weatherDaily.Date = TimeHelper.ToDateTime(Convert.ToInt32(item["dt"]));
 
