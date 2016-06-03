@@ -107,7 +107,7 @@ namespace WeatherNetTest
         public void GetDailyByCityNameTest()
         {
             //Does not exist
-            var result = Daily.GetByCityName("testcitytest", "testcitytest", 14);
+            var result = Daily.GetByCityName("testcitytest1", "testcitytest1", 14);
             Assert.IsFalse(result.Success);
             Assert.IsNull(result.Items);
 
