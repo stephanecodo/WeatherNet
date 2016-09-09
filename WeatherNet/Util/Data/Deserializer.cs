@@ -30,6 +30,7 @@ namespace WeatherNet.Util.Data
                 weatherCurrent.Title = Encoding.UTF8.GetString(Encoding.Default.GetBytes(Convert.ToString(response["weather"][0]["main"])));
                 weatherCurrent.Description = Encoding.UTF8.GetString(Encoding.Default.GetBytes(Convert.ToString(response["weather"][0]["description"])));
                 weatherCurrent.Icon = Encoding.UTF8.GetString(Encoding.Default.GetBytes(Convert.ToString(response["weather"][0]["icon"])));
+                weatherCurrent.ConditionID = Convert.ToInt32(response["weather"][0]["id"]);
             }
 
             if (response["main"] != null)
@@ -77,6 +78,7 @@ namespace WeatherNet.Util.Data
                     weatherForecast.Title = Encoding.UTF8.GetString(Encoding.Default.GetBytes(Convert.ToString(item["weather"][0]["main"])));
                     weatherForecast.Description = Encoding.UTF8.GetString(Encoding.Default.GetBytes(Convert.ToString(item["weather"][0]["description"])));
                     weatherForecast.Icon = Encoding.UTF8.GetString(Encoding.Default.GetBytes(Convert.ToString(item["weather"][0]["icon"])));
+                    weatherForecast.ConditionID = Convert.ToInt32(item["weather"][0]["id"]);
                 }
 
                 if (item["main"] != null)
