@@ -10,10 +10,13 @@ using Newtonsoft.Json.Linq;
 
 namespace WeatherNet.Util.Api
 {
-    internal class ApiClient
+    public class ApiClient
     {
         public static string API_URL = "http://api.openweathermap.org/data/2.5";
-
+        public static void ProvideApiKey(string apiKey)
+        {
+            api_key = apiKey;
+        }
         static string api_key;
         public static string API_KEY 
         { 
