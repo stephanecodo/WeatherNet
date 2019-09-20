@@ -12,26 +12,28 @@ namespace WeatherNet.Util.Api
 {
     public class ApiClient
     {
-        public static string API_URL = "http://api.openweathermap.org/data/2.5";
+        public const string API_URL = "http://api.openweathermap.org/data/2.5";
+        private static string _apiKey;
+        
         public static void ProvideApiKey(string apiKey)
         {
-            api_key = apiKey;
+            _apiKey = apiKey;
         }
-        static string api_key;
+        
         public static string API_KEY 
         { 
             get
             {
-                if (string.IsNullOrEmpty(api_key))
+                if (string.IsNullOrEmpty(_apiKey))
                 {
                     var key = ConfigurationManager.AppSettings["APIKey"];
                     if (string.IsNullOrEmpty(key))
                         throw new Exception("API key not found");
 
-                    api_key = key;
+                    _apiKey = key;
                 }
 
-                return api_key;
+                return _apiKey;
             }
         }
 

@@ -1,16 +1,19 @@
-﻿#region
-
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using System;
+using System.Configuration;
+using NUnit.Framework;
 using WeatherNet;
-
-#endregion
 
 namespace WeatherNetTest
 {
-    [TestClass]
     public class WeatherNetTest
     {
-        [TestMethod]
+        [SetUp]
+        public void Setup()
+        {
+            ConfigurationManager.AppSettings.Set("APIKey", "api-key");
+        }
+        
+        [Test]
         public void GetCurrentByCityNameTest()
         {
             //Does Not Exist
@@ -25,7 +28,7 @@ namespace WeatherNetTest
             Assert.IsNotNull(result.Item);
         }
 
-        [TestMethod]
+        [Test]
         public void GetCurrentByCityIdTest()
         {
             //Does not exist
@@ -39,7 +42,7 @@ namespace WeatherNetTest
             Assert.IsNotNull(result.Item);
         }
 
-        [TestMethod]
+        [Test]
         public void GetCurrentByCityCoordinatesTest()
         {
             //Does Not Exist
@@ -54,7 +57,7 @@ namespace WeatherNetTest
         }
 
 
-        [TestMethod]
+        [Test]
         public void GetForecastByCityNameTest()
         {
             //Does not exist
@@ -70,7 +73,7 @@ namespace WeatherNetTest
             Assert.IsNotNull(result.Items[0]);
         }
 
-        [TestMethod]
+        [Test]
         public void GetForecastByCityIdTest()
         {
             //Does not exist
@@ -86,7 +89,7 @@ namespace WeatherNetTest
             Assert.IsNotNull(result.Items[0]);
         }
 
-        [TestMethod]
+        [Test]
         public void GetForecastByCityCoordinatesTest()
         {
             //Does not exist
@@ -103,7 +106,7 @@ namespace WeatherNetTest
         }
 
 
-        [TestMethod]
+        [Test]
         public void GetDailyByCityNameTest()
         {
             //Does not exist
@@ -119,7 +122,7 @@ namespace WeatherNetTest
             Assert.IsNotNull(result.Items[0]);
         }
 
-        [TestMethod]
+        [Test]
         public void GetDailyByCityIdTest()
         {
             //Does not exist
@@ -135,7 +138,7 @@ namespace WeatherNetTest
             Assert.IsNotNull(result.Items[0]);
         }
 
-        [TestMethod]
+        [Test]
         public void GetDailyByCityCoordinatesTest()
         {
             //Does not exist

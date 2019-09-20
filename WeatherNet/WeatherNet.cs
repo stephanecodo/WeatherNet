@@ -6,10 +6,7 @@ namespace WeatherNet
     /// </summary>
     public class WeatherNet
     {
-
-        private Current Current;
         public  Forecast Forecast;
         public  Daily Daily;
-
     }
 }
