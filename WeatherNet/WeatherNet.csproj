@@ -2,6 +2,14 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <Title>WeatherNet.NetStandard</Title>
+    <Authors>Alexandre Lepretre</Authors>
+    <Description>The netstandard version of https://github.com/stephanecodo/WeatherNet</Description>
+    <PackageProjectUrl>https://github.com/Matsa59/WeatherNet</PackageProjectUrl>
+    <PackageLicenseUrl>https://github.com/Matsa59/WeatherNet/blob/master/LICENSE</PackageLicenseUrl>
+    <RepositoryUrl>https://github.com/Matsa59/WeatherNet</RepositoryUrl>
+    <PackageId>WeatherNet.Netstandard</PackageId>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
   </PropertyGroup>
 
   <ItemGroup>

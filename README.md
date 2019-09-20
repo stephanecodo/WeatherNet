@@ -1,4 +1,4 @@
-A simple client for [Open Weather Map API] (http://openweathermap.org/) written in .NET C# 4.0
+A simple client for [Open Weather Map API] (http://openweathermap.org/) written in .netstandard2.0
 
 ####Features
 Search by city name, geographic coordinates and city ID.
