@@ -149,6 +149,7 @@ namespace WeatherNet.Util.Data
                 weatherDaily.Rain = Convert.ToDouble(item["rain"]);
                 weatherDaily.DateUnixFormat = Convert.ToInt32(item["dt"]);
                 weatherDaily.Date = TimeHelper.ToDateTime(Convert.ToInt32(item["dt"]));
+                weatherDaily.Snow = Convert.ToDouble(item["snow"]);
 
                 weatherDailies.Add(weatherDaily);
             }
